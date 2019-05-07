@@ -32,13 +32,14 @@
 
     console.log('dimsum-cart.tag');
     observable.on('dimsum-selected', function(selection) {
+
       selectedAnswer = true;
       if (questions[currentQuestion].answer == selection) {
         // correct answer
         currentScore = currentScore + 1;
-        message = 'Congratulations! You are correct.';
+        message = "Congratulations! You are correct.";
       } else {
-        message = 'Ai yah! Try the next question.';
+        message = "Sorry that's incorrect! Try the next question.";
       }
 
       that.update();
@@ -49,6 +50,7 @@
 
       currentQuestion = currentQuestion + 1;
       selectedAnswer = false;
+      message = '';
 
       if (currentQuestion == questions.length ) {
         gameEnded = true;
@@ -64,7 +66,6 @@
       console.log('play game started');
       currentScore = 0;
       currentQuestion = 0;
-      gameStarted = true;
       showIntroduction = false;
       gameEnded = false;
 
@@ -79,43 +80,73 @@
        audio.play();
     }
 
+
+
   </script>
   <!--scripts end-->
-  <br/>
+  <br>
   <audio id='audio'/>
 
-  <div if={showIntroduction}>
-    <h2>Learn to order Dim Sum - select the dim sum that you hear.</h2>
-     <button onclick={playGame}>Start Game - I &#10084; Dim Sum</button>
-  <!--start of sweet and savoury buttons tag-->
-  </div>
 
-  <div if={gameStarted}>
-    <font face=arial size=5 color="purple">
-        <h2>Score: { currentScore }</h2>
-    </font>
 
-    <h2>Select the Dim Sum that you hear</h2>
-    <div if={!selectedAnswer}>
-      <dimsum-eggtart></dimsum-eggtart>
+  <div>
+
+        <p align="right">Score: { currentScore }</p>
+
+      <!--start of riot tags-->
+      <!--start of bootstrap columns-->
+
+
+      <div class="container-fluid">
+          <div class="row">
+            <!--start column 1-->
+        <div class="col-sm-1 col-md-4" style="background-color:;">
+      <dimsum-eggtart></dimsum-eggtart> 
       <dimsum-noodleroll></dimsum-noodleroll>
-      <dimsum-potsticker></dimsum-potsticker>
-    </div>
+      </div>
+      <!--end column 1-->
 
-    <div if={selectedAnswer}>
-      <h2>{message}</h2>
-      <button onclick={nextQuestion}>Next Question</button>
-    </div>
+      <!--start column 1b-->
+  <div class="col-sm-1 col-md-4" style="background-color:; padding-right:20px; border-right: 3px solid #eee;">
+<dimsum-potsticker></dimsum-potsticker>
+</div>
+<!--end column 1b-->
+
+
+        <!--start column 2-->
+      <div class="col-sm-3 col-md-6" style="background-color:;">
+<!--start of intro-->
+        <div if={showIntroduction}>
+          <h1> &#10084; Learn to order Dim Sum&#10084;</h1>
+          <h2><br>
+            Instructions: Click on the image of the dim sum dish you hear.</h2>
+           <button onclick={playGame}>Start Game</button>
+        </div>
+        <!--end of intro-->
+
+  <!--start of if game ended-->
+        <div if={gameEnded}>
+          <h2>Thanks for playing - do you want to try again?</h2>
+
+              <h2>Score: { currentScore }</h2>
+
+          <button onclick={playGame}>Start Game - I &#10084; Dim Sum</button>
+
+        </div>
+          <!--ended of if game ended-->
+       { message }
+         <button  if={selectedAnswer} onclick={nextQuestion}>Next Question</button>
+      </div>
+      <!--end column 2-->
+      </div>
+      </div>
+      <!--end of riot tags-->
+
+
+
   </div>
 
-  <div if={gameEnded}>
-    <h2>Thanks for playing - do you want to try again?</h2>
-    <font face=arial size=5 color="purple">
-        <h2>Score: { currentScore }</h2>
-    </font>
-    <button onclick={playGame}>Start Game - I &#10084; Dim Sum</button>
-  <!--start of sweet and savoury buttons tag-->
-  </div>
+
 <!--end of riot tags-->
 </center>
 </dimsum-cart>

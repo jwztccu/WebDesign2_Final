@@ -1,6 +1,6 @@
 <dimsum-eggtart>
     <img src="images/dimsum_dahntaht_eggtart.png" onclick={selectDimSum}>
-    <br />
+    <br>
 
     <script>
        selectDimSum() {

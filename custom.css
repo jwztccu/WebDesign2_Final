@@ -1,11 +1,25 @@
  background-color: darkgray;
 
+ body {
+ font-family: 'Abril Fatface', cursive;
+ }
 
 html {
- 
+
   no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+.row > [class*='col-'] {
+	 display: flex;
+	 flex-direction: column;
 }

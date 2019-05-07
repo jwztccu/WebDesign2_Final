@@ -1,6 +1,6 @@
 <dimsum-potsticker>
     <img src="images/dimsum_potsticker.png" onclick={selectDimSum}>
-    <br />
+    <br>
 
     <script>
        selectDimSum() {

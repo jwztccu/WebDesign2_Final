@@ -1,6 +1,6 @@
 <dimsum-noodleroll>
     <img src="images/dimsum_gnowcherng_beefnoodleroll.png" onclick={selectDimSum}>
-    <br />
+    <br>
 
     <script>
        console.log('noodle rolle')
