@@ -1,9 +1,5 @@
 <dimsum-cart>
 <center>
-    <!--start of sweet and savoury buttons tag-->
-
-  <!--START OF AUTHENTICATION FROM ADMIN TAG -->
-  <!--<admin> -->
 
 
   <script>
@@ -34,6 +30,8 @@
        }
      ];
 
+// start of game logic
+// look at notes for why that = this
     var that = this;
     that.update();
 
@@ -88,8 +86,9 @@
     }
 
 
-
+  //end of game logic
   </script>
+
   <!--scripts end-->
   <br>
   <audio id='audio'/>
