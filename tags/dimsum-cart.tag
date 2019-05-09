@@ -124,7 +124,7 @@
         <!--start column 2-->
       <div class="col-sm-3 col-md-6" style="background-color:;">
 <p align="right">Score: { currentScore }</p>
-        <h1> &#10084; Learn to Order Dim Sum &#10084;</h1>
+        <h1> Learn to Order Dim Sum &#10083;</h1>
         <br><i>Click on the image of the dim sum dish you hear.</i>
 <!--start of intro-->
         <div if={showIntroduction}>
