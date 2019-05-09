@@ -14,16 +14,23 @@
 
      var questions = [
        {
-         question: 'images/dimsum_dahntaht_eggtart_pronounciation.m4a',
-         answer: 'dahntaht'
-       },
-       {
          question: 'images/dimsum_gnowcherng_beefnoodleroll_pronounciation.m4a',
          answer: 'gnowcherng'
        },
+
+       {
+         question: 'images/dimsum_dahntaht_eggtart_pronounciation.m4a',
+         answer: 'dahntaht'
+       },
+
        {
          question: 'images/dimsum_potstickers_pronounciation.m4a',
          answer: 'potsticker'
+       },
+
+       {
+         question: 'images/dimsum_sesameball_pronounciation.m4a',
+         answer: 'sesameball'
        }
      ];
 
@@ -91,7 +98,7 @@
 
   <div>
 
-        <p align="right">Score: { currentScore }</p>
+
 
       <!--start of riot tags-->
       <!--start of bootstrap columns-->
@@ -100,26 +107,34 @@
       <div class="container-fluid">
           <div class="row">
             <!--start column 1-->
-        <div class="col-sm-1 col-md-4" style="background-color:;">
-      <dimsum-eggtart></dimsum-eggtart> 
+        <div class="col-sm-1 col-md-4" style="background-color:; border-top: 10px;">
+      <dimsum-eggtart></dimsum-eggtart>
       <dimsum-noodleroll></dimsum-noodleroll>
       </div>
       <!--end column 1-->
 
       <!--start column 1b-->
-  <div class="col-sm-1 col-md-4" style="background-color:; padding-right:20px; border-right: 3px solid #eee;">
+  <div class="col-sm-1 col-md-4" style="background-color:; padding-right:20px; border-top: 10px; border-right: 3px solid #eee;">
 <dimsum-potsticker></dimsum-potsticker>
+<br>
+<dimsum-sesameball></dimsum-sesameball>
 </div>
 <!--end column 1b-->
 
 
         <!--start column 2-->
       <div class="col-sm-3 col-md-6" style="background-color:;">
+<p align="right">Score: { currentScore }</p>
+        <h1> &#10084; Learn to Order Dim Sum &#10084;</h1>
+        <br><i>Click on the image of the dim sum dish you hear.</i>
 <!--start of intro-->
         <div if={showIntroduction}>
-          <h1> &#10084; Learn to order Dim Sum&#10084;</h1>
+
           <h2><br>
-            Instructions: Click on the image of the dim sum dish you hear.</h2>
+            Instructions:<br>
+            1) Click "Start Game" button
+            <br>
+              2)Click on the image of the dim sum dish you hear.</h2><br>
            <button onclick={playGame}>Start Game</button>
         </div>
         <!--end of intro-->
